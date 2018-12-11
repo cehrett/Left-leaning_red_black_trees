@@ -13,36 +13,36 @@ The RBTs implemented here are shown in the Jupyter notebook to be significantly 
 ## To use this code
 Required libraries are rcParam from pylab, and pyplot from matplotlib. The RBT class is defined in section 3 of the notebook, and it depends on the class TreeNode which is a dependency for RBT() defined in section 2. Likewise, the plot_tree() function is defined in section 2, along with plot_node() upon which it depends.
 ### Example: create RBT
-  >>>rbt = RBT()`
+`>>>rbt = RBT()`
 ### Example: insert into RBT
-  >>>usernames_rbt = RBT()  
-  >>>usernames_rbt.insert('Bob')  
-  >>>userids_rbt = RBT()
-  >>>userids_rbt.insert(355)
+`>>>usernames_rbt = RBT()`  
+`>>>usernames_rbt.insert('Bob')`  
+`>>>userids_rbt = RBT()`  
+`>>>userids_rbt.insert(355)`
 ### Example: Look-up (check if element is in RBT)
-  >>>usernames_rbt.is_element('Alice')
-  False
-  >>>userids_rbt.is_element(355)
-  True
+`>>>usernames_rbt.is_element('Alice')`  
+`False`  
+`>>>userids_rbt.is_element(355)`  
+`True`
 ### Example: Delete from RBT
-  >>>usernames_rbt.delete('Bob')
+`>>>usernames_rbt.delete('Bob')`
 ### Example: Plot RBT
-  >>>people1 = ['Bob','Alice','Doug','Kathy','Queen','Carol','Irene','Tom',
-  ...      'Peter','Wanda','Yaakov', 'Luis','Zandra','Ronald','Mabel','Ursala','Eve',
-  ...      'Frank','Ginger','Norm','Sarah','Jeff','Vince','Howard',
-  ...      'Oprah']
-  >>>rbt = RBT()
-  >>>for p in people1: rbt.insert(p)
-  ...
-  >>>plot_tree(rbt.tree)
-  ![RBT](./rbt.png "RBT rendered via plot_tree()")
+`>>>people1 = ['Bob','Alice','Doug','Kathy','Queen','Carol','Irene','Tom',`  
+`...      'Peter','Wanda','Yaakov', 'Luis','Zandra','Ronald','Mabel','Ursala','Eve',`  
+`...      'Frank','Ginger','Norm','Sarah','Jeff','Vince','Howard',`  
+`...      'Oprah']`  
+`>>>rbt = RBT()`  
+`>>>for p in people1: rbt.insert(p)`  
+`...`  
+`>>>plot_tree(rbt.tree)`
+![RBT](./rbt.png "RBT rendered via plot_tree()")
 ### Example: Traverse tree in order (print all elements)
-  >>>people1 = ['Bob','Alice','Doug','Kathy','Queen','Carol','Irene','Tom',
-  ...      'Peter','Wanda','Yaakov', 'Luis','Zandra','Ronald','Mabel','Ursala','Eve',
-  ...      'Frank','Ginger','Norm','Sarah','Jeff','Vince','Howard',
-  ...      'Oprah']
-  >>>rbt = RBT()
-  >>>for p in people1: rbt.insert(p)
-  ...
-  >>>print(rbt.tree.traverse_infix())
-  ['Alice', 'Bob', 'Carol', 'Doug', 'Eve', 'Frank', 'Ginger', 'Howard', 'Irene', 'Jeff', 'Kathy', 'Luis', 'Mabel', 'Norm', 'Oprah', 'Peter', 'Queen','Ronald', 'Sarah', 'Tom', 'Ursala', 'Vince', 'Wanda', 'Yaakov', 'Zandra']
+`>>>people1 = ['Bob','Alice','Doug','Kathy','Queen','Carol','Irene','Tom',`  
+`...      'Peter','Wanda','Yaakov', 'Luis','Zandra','Ronald','Mabel','Ursala','Eve',`  
+`...      'Frank','Ginger','Norm','Sarah','Jeff','Vince','Howard',`  
+`...      'Oprah']`  
+`>>>rbt = RBT()`  
+`>>>for p in people1: rbt.insert(p)`  
+`...`  
+`>>>print(rbt.tree.traverse_infix())`  
+`['Alice', 'Bob', 'Carol', 'Doug', 'Eve', 'Frank', 'Ginger', 'Howard', 'Irene', 'Jeff', 'Kathy', 'Luis', 'Mabel', 'Norm', 'Oprah','Peter', 'Queen','Ronald', 'Sarah', 'Tom', 'Ursala', 'Vince', 'Wanda', 'Yaakov', 'Zandra']`  
