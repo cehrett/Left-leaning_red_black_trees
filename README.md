@@ -2,10 +2,14 @@
 Carl Ehrett and Stephen Peele, November 29, 2016
 
 ## Nature of project 
-Binary search trees (BSTs) are a structure for storing sorted data. Times to look up information, insert new entries, or delete entries are on average proportional to the log of the number of entries in the tree -- i.e., they are of average complexity O(log(n)). However, in worst case scenarios, BSTs can instead have O(n), which for large n is much slower. Red/black trees (RBTs) are a variant of BSTs with extra constraints on the structure of the tree, which guarantee that the worst-case scenarios are still O(log(n)).
+Binary search trees (BSTs) are a structure for storing sorted data. Times to look up information, insert new entries, or delete entries are on average proportional to the log of the number of entries in the tree -- i.e., they are of average complexity O(log(n)). However, in worst case scenarios, BSTs can instead have O(n), which for large n is much slower. Red/black trees (RBTs) are a variant of BSTs with extra constraints on the structure of the tree, which guarantee that the worst-case scenarios are still O(log(n)). The extra constraints are:
+1. Each node has a color, red or black
+2. All empty (terminal) nodes are black
+3. If a node is red, it has only black children
+4. Any path downward on the tree from a given node contains the same number of black nodes.
 
 ## Implementation
-This Jupyter notebook uses Python 2 to implement left-leaning red/black trees (Sedgwick 2008, *Left-leaning Red-Black Trees*, https://www.cs.princeton.edu/~rs/talks/LLRB/LLRB.pdf), a variant of RBTs.
+This Jupyter notebook uses Python 2 to implement left-leaning red/black trees (Sedgwick 2008, *Left-leaning Red-Black Trees*, https://www.cs.princeton.edu/~rs/talks/LLRB/LLRB.pdf), a variant of RBTs. The notebook also provides a function for plotting (small) RBTs, with appropriate coloring.
 
 ## Details and Results
 The RBTs implemented here are shown in the Jupyter notebook to be significantly faster than traditional BSTs for worst-case input. They are (as expected) not as fast as traditional BSTs for ordinary-case input, since RBTs involve additional computational overhead beyond what is required for simpler BSTs. For details on the background of RBTs, their implementation here, and the results obtained using this code, please see the included [report](./RBTrees.pdf).
@@ -36,6 +40,7 @@ Required libraries are rcParam from pylab, and pyplot from matplotlib. The RBT c
 `...`  
 `>>>plot_tree(rbt.tree)`
 ![RBT](./rbt.png "RBT rendered via plot_tree()")
+Note: Nil (empty) nodes are not included in the plots.
 ### Example: Traverse tree in order (print all elements)
 `>>>people1 = ['Bob','Alice','Doug','Kathy','Queen','Carol','Irene','Tom',`  
 `...      'Peter','Wanda','Yaakov', 'Luis','Zandra','Ronald','Mabel','Ursala','Eve',`  
