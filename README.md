@@ -5,7 +5,7 @@ Carl Ehrett and Stephen Peele, November 29, 2016
 Binary search trees (BSTs) are a structure for storing sorted data. Times to look up information, insert new entries, or delete entries are on average proportional to the log of the number of entries in the tree -- i.e., they are of average complexity O(log(n)). However, in worst case scenarios, BSTs can instead have O(n), which for large n is much slower. Red/black trees (RBTs) are a variant of BSTs with extra constraints on the structure of the tree, which guarantee that the worst-case scenarios are still O(log(n)). The extra constraints are:
 1. Each node has a color, red or black
 2. All empty (terminal) nodes are black
-3. If a node is red, it has only black children
+3. If a node is red, all of its children are black
 4. Any path downward on the tree from a given node contains the same number of black nodes.
 
 ## Implementation
